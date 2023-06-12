@@ -1,8 +1,7 @@
 import { useTexture } from '@react-three/drei'
 import smokeImg from '../../assets/images/smoke.png'
-import { useLayoutEffect, useMemo, useRef } from 'react'
+import { useMemo, useRef } from 'react'
 import { useFrame } from '@react-three/fiber'
-import THREE from 'three'
 
 export default function RainExperience() {
   const smoke = useTexture(smokeImg)
