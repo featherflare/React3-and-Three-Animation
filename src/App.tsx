@@ -5,6 +5,7 @@ function App() {
     <>
       <div>Page Selection</div>
       <a href='/rain'>Rain</a>
+      <a href='/nebular'>Nebular</a>
     </>
   )
 }
