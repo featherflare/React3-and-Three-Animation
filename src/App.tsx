@@ -8,6 +8,7 @@ function App() {
       <a href='/nebular'>Nebular</a>
       <a href='/space'>Space Warp</a>
       <a href='/movTri'>Moving Triangle</a>
+      <a href='/distortion'>Distortion</a>
     </>
   )
 }
