@@ -7,6 +7,7 @@ function App() {
       <a href='/rain'>Rain</a>
       <a href='/nebular'>Nebular</a>
       <a href='/space'>Space Warp</a>
+      <a href='/movTri'>Moving Triangle</a>
     </>
   )
 }
