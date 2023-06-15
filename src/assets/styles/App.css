@@ -31,3 +31,11 @@ div {
   width: 100vw !important;
   height: 100vh !important;
 }
+
+.tempcanvas {
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  background: red;
+}

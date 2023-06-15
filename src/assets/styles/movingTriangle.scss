@@ -159,7 +159,7 @@ $js: polygon(40.56% 55.33%, 45.74% 56.57%, 41.45% 53.5%),
   @for $i from 1 through 110 {
     .p#{$i} {
       transition-delay: random(500) + ms !important;
-      background: rgba(#f0f, random(10) / 10);
+      background: rgba(#f0f, calc(random(10) / 10));
       @if length($obj) >= $i {
         clip-path: nth($obj, $i);
       } @else {

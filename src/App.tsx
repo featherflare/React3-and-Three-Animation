@@ -9,6 +9,8 @@ function App() {
       <a href='/space'>Space Warp</a>
       <a href='/movTri'>Moving Triangle</a>
       <a href='/distortion'>Distortion</a>
+      <a href='/svgto3d'>SvgTo3D</a>
+      <a href='/mandalaEffect'>Mandala Effect</a>
     </>
   )
 }

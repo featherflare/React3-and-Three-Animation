@@ -5,6 +5,8 @@ import Nebular from '../pages/NebularEffect/nebular'
 import Space from '../pages/SpaceWarpEffect/space'
 import MovingTriangle from '../pages/MovingTriangle/movingTriangle'
 import Distortion from '../pages/DistortionImg/distortion'
+import SvgTo3D from '../pages/SVGTo3D/svgTo3D'
+import MandalaEffect from '../pages/MandalaEffect/mandalaEffect'
 
 export const router = createBrowserRouter([
   { path: '/', element: <App /> },
@@ -13,4 +15,6 @@ export const router = createBrowserRouter([
   { path: '/space', element: <Space /> },
   { path: '/movTri', element: <MovingTriangle /> },
   { path: '/distortion', element: <Distortion /> },
+  { path: '/svgto3d', element: <SvgTo3D /> },
+  { path: '/mandalaEffect', element: <MandalaEffect /> },
 ])
