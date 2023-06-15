@@ -32,7 +32,8 @@ div {
   height: 100vh !important;
 }
 
-.tempcanvas {
+.tempcanvas,
+.gui {
   position: fixed;
   z-index: 9999;
   top: 0;
