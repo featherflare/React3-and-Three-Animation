@@ -74,10 +74,11 @@ export default function CustomScrollAndClipCssProperty() {
     },
   ]
 
-  //   const [current, setCurrent] = useState<number>(
-  //     (sections.length / 2 - 0.5) * innerHeight
-  //   )
+  const [current, setCurrent] = useState<number>(
+    (sections.length / 2 - 0.5) * innerHeight
+  )
   const [lastS, setLastS] = useState<number>(0)
+  const [lastTime, setLastTime] = useState<number>(0)
   const [isScrolling, setIsScrolling] = useState<boolean>(true)
   const [skew, setSkew] = useState<number>(0)
   const [liheight, setLiheight] = useState<number>(150)
@@ -92,28 +93,16 @@ export default function CustomScrollAndClipCssProperty() {
   const textRefs = useRef([])
   textRefs.current = []
 
-  const animationBreak = 750
-  let lastTime = 0
-
-  let current = (sections.length / 2 - 0.5) * innerHeight
-
   const handleWheel = (e: any) => {
-    velocity(e)
     const currentTime = new Date().getTime()
     if (!isScrolling) setIsScrolling(true)
     let norm = normalizeWheel(e)
     let lenght = sections.length / 2 - 0.5
-    const isAnimationEnable = currentTime - lastTime > animationBreak
 
-    if (!isAnimationEnable) return
+    setCurrent((prev) => prev - norm.spinY * 10)
 
-    lastTime = currentTime
-
-    current -= norm.spinY * 5000
-    console.log(norm.spinY, current, isAnimationEnable)
-
-    if (current < -lenght * innerHeight) current = -lenght * innerHeight
-    if (current > lenght * innerHeight) current = lenght * innerHeight
+    if (current < -lenght * innerHeight) setCurrent(-lenght * innerHeight)
+    if (current > lenght * innerHeight) setCurrent(lenght * innerHeight)
 
     gsap.to(mainRef.current, 0.5, {
       y: current,
@@ -145,6 +134,7 @@ export default function CustomScrollAndClipCssProperty() {
           gotoClosest()
         }, 200)
         setIsScrolling(false)
+        setLastTime(currentTime)
       },
     })
   }
@@ -242,8 +232,12 @@ export default function CustomScrollAndClipCssProperty() {
   }
 
   function gotoClosest() {
-    let closest = Math.round(current / innerHeight)
-    goto(closest)
+    console.log(current / innerHeight)
+    // let closest = Math.round(current / innerHeight)
+    //     ? Math.round(current / innerHeight)
+    //     : current / innerHeight
+    // console.log(closest)
+    // goto(closest)
   }
 
   function goto(n: any) {
@@ -251,7 +245,7 @@ export default function CustomScrollAndClipCssProperty() {
       y: innerHeight * n,
       overflow: 5,
       onComplete: function () {
-        current = innerHeight * n
+        setCurrent(innerHeight * n)
         setIsScrolling(false)
       },
     })
@@ -274,17 +268,14 @@ export default function CustomScrollAndClipCssProperty() {
     $('.nav__2').css('clip', clip)
   }, [clip])
 
-  useEffect(() => {
-    window.addEventListener('wheel', handleWheel)
-
-    return () => window.removeEventListener('wheel', handleWheel)
-  }, [])
-
   return (
     <>
       <div
         ref={mainRef}
         className='main-scroller'
+        onWheel={(e) => {
+          handleWheel(e), velocity(e)
+        }}
         style={{
           transform: `translate(0,${
             (sections.length / 2 - 0.5) * innerHeight
