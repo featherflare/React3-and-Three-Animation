@@ -11,6 +11,7 @@ function App() {
       <a href='/distortion'>Distortion</a>
       <a href='/svgto3d'>SvgTo3D</a>
       <a href='/mandalaEffect'>Mandala Effect</a>
+      <a href='/customScroll'>Custom Scroll & Clip Css Property</a>
     </>
   )
 }

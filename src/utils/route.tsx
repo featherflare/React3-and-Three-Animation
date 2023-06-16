@@ -7,6 +7,7 @@ import MovingTriangle from '../pages/MovingTriangle/movingTriangle'
 import Distortion from '../pages/DistortionImg/distortion'
 import SvgTo3D from '../pages/SVGTo3D/svgTo3D'
 import MandalaEffect from '../pages/MandalaEffect/mandalaEffect'
+import CustomScrollAndClipCssProperty from '../pages/CustomScrollAndClipCssProperty/CustomScrollAndClipCssProperty'
 
 export const router = createBrowserRouter([
   { path: '/', element: <App /> },
@@ -17,4 +18,8 @@ export const router = createBrowserRouter([
   { path: '/distortion', element: <Distortion /> },
   { path: '/svgto3d', element: <SvgTo3D /> },
   { path: '/mandalaEffect', element: <MandalaEffect /> },
+  {
+    path: '/customScroll',
+    element: <CustomScrollAndClipCssProperty />,
+  },
 ])
