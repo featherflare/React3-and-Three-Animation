@@ -8,6 +8,8 @@ import Distortion from '../pages/DistortionImg/distortion'
 import SvgTo3D from '../pages/SVGTo3D/svgTo3D'
 import MandalaEffect from '../pages/MandalaEffect/mandalaEffect'
 import CustomScrollAndClipCssProperty from '../pages/CustomScrollAndClipCssProperty/CustomScrollAndClipCssProperty'
+import ChrismasTree from '../pages/ChrismasTree/ChrismasTree'
+import ParticleBlobing from '../pages/ParticleBlobing/ParticleBlobing'
 
 export const router = createBrowserRouter([
   { path: '/', element: <App /> },
@@ -21,5 +23,13 @@ export const router = createBrowserRouter([
   {
     path: '/customScroll',
     element: <CustomScrollAndClipCssProperty />,
+  },
+  {
+    path: '/chrismasTree',
+    element: <ChrismasTree />,
+  },
+  {
+    path: '/particleBlobing',
+    element: <ParticleBlobing />,
   },
 ])

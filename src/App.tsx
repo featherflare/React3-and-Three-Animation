@@ -12,6 +12,8 @@ function App() {
       <a href='/svgto3d'>SvgTo3D</a>
       <a href='/mandalaEffect'>Mandala Effect</a>
       <a href='/customScroll'>Custom Scroll & Clip Css Property</a>
+      <a href='/chrismasTree'>ChrismasTree</a>
+      <a href='/particleBlobing'>Particle Blobing</a>
     </>
   )
 }
