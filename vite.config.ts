@@ -10,7 +10,12 @@ export default defineConfig({
     glsl(),
     VitePluginFonts({
       google: {
-        families: ['Kumar One Outline', 'Kumar One'],
+        families: [
+          'Kumar One Outline',
+          'Kumar One',
+          'Source Code Pro',
+          'PT Mono',
+        ],
       },
     }),
   ],
