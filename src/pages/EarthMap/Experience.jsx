@@ -14,33 +14,33 @@ import { Draggable } from 'gsap/all'
 gsap.registerPlugin(Draggable)
 
 export default function EarthMapExperience() {
-  var nullObject = document.createElement('div')
-  $('#container').append(nullObject)
-  $(nullObject).addClass('is-null')
+  // var nullObject = document.createElement('div')
+  // $('#container').append(nullObject)
+  // $(nullObject).addClass('is-null')
 
-  Draggable.create(nullObject, {
-    type: 'x,y',
-    trigger: $('#container'),
-    onDrag: doDrag,
-    throwProps: true,
-    onThrowUpdate: doDrag,
-    bounds: { minY: 40, maxY: 480 },
-  })
+  // Draggable.create(nullObject, {
+  //   type: 'x,y',
+  //   trigger: $('#container'),
+  //   onDrag: doDrag,
+  //   throwProps: true,
+  //   onThrowUpdate: doDrag,
+  //   bounds: { minY: 40, maxY: 480 },
+  // })
 
-  function doDrag(e) {
-    var posX = nullObject._gsTransform.x
-    var posY = nullObject._gsTransform.y
+  // function doDrag(e) {
+  //   var posX = nullObject._gsTransform.x
+  //   var posY = nullObject._gsTransform.y
 
-    gsap.to('#one', 1.5, {
-      x: posX,
-      y: posY,
-    })
+  //   gsap.to('#one', 1.5, {
+  //     x: posX,
+  //     y: posY,
+  //   })
 
-    gsap.to(group.rotation, 1.5, {
-      x: posY / 100,
-      y: posX / 100,
-    })
-  }
+  //   gsap.to(group.rotation, 1.5, {
+  //     x: posY / 100,
+  //     y: posX / 100,
+  //   })
+  // }
 
   const earth = useTexture(earthImg)
   const uv = useTexture(earthUV)

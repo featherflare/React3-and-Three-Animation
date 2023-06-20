@@ -19,9 +19,9 @@ export default function EarthMap() {
       >
         <EarthMapExperience />
       </Canvas>
-      <div id='container'>
+      {/* <div id='container'>
         <div id='one'></div>
-      </div>
+      </div> */}
     </>
   )
 }
