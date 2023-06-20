@@ -11,6 +11,7 @@ import CustomScrollAndClipCssProperty from '../pages/CustomScrollAndClipCssPrope
 import ChrismasTree from '../pages/ChrismasTree/ChrismasTree'
 import ParticleBlobing from '../pages/ParticleBlobing/ParticleBlobing'
 import LiquidParticle from '../pages/LiquidParticle/LiquidParticle'
+import EarthMap from '../pages/EarthMap/EarthMap'
 
 export const router = createBrowserRouter([
   { path: '/', element: <App /> },
@@ -36,5 +37,9 @@ export const router = createBrowserRouter([
   {
     path: '/liquidParticle',
     element: <LiquidParticle />,
+  },
+  {
+    path: '/earthMap',
+    element: <EarthMap />,
   },
 ])

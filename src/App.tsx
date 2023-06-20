@@ -15,6 +15,7 @@ function App() {
       <a href='/chrismasTree'>ChrismasTree</a>
       <a href='/particleBlobing'>Particle Blobing</a>
       <a href='/liquidParticle'>Liquid Particle</a>
+      <a href='/earthMap'>Earth Map</a>
     </>
   )
 }
