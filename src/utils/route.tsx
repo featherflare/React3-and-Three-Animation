@@ -12,6 +12,7 @@ import ChrismasTree from '../pages/ChrismasTree/ChrismasTree'
 import ParticleBlobing from '../pages/ParticleBlobing/ParticleBlobing'
 import LiquidParticle from '../pages/LiquidParticle/LiquidParticle'
 import EarthMap from '../pages/EarthMap/EarthMap'
+import TextDecompiled from '../pages/TextDecompiled/TextDecompiled'
 
 export const router = createBrowserRouter([
   { path: '/', element: <App /> },
@@ -41,5 +42,9 @@ export const router = createBrowserRouter([
   {
     path: '/earthMap',
     element: <EarthMap />,
+  },
+  {
+    path: '/textDecompiled',
+    element: <TextDecompiled />,
   },
 ])
