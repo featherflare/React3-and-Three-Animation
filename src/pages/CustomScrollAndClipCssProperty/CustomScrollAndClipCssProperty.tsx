@@ -202,7 +202,7 @@ export default function CustomScrollAndClipCssProperty() {
     return { spinX: sX, spinY: sY, pixelX: pX, pixelY: pY }
   }
 
-  function velocity(e: any) {
+  function velocity() {
     if (isScrolling) {
       let speed = current - lastS
 
@@ -233,11 +233,11 @@ export default function CustomScrollAndClipCssProperty() {
 
   function gotoClosest() {
     console.log(current / innerHeight)
-    // let closest = Math.round(current / innerHeight)
-    //     ? Math.round(current / innerHeight)
-    //     : current / innerHeight
-    // console.log(closest)
-    // goto(closest)
+    let closest = Math.round(current / innerHeight)
+      ? Math.round(current / innerHeight)
+      : current / innerHeight
+    console.log(closest)
+    goto(closest)
   }
 
   function goto(n: any) {
@@ -274,7 +274,7 @@ export default function CustomScrollAndClipCssProperty() {
         ref={mainRef}
         className='main-scroller'
         onWheel={(e) => {
-          handleWheel(e), velocity(e)
+          handleWheel(e), velocity()
         }}
         style={{
           transform: `translate(0,${

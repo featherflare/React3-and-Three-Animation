@@ -10,6 +10,7 @@ import MandalaEffect from '../pages/MandalaEffect/mandalaEffect'
 import CustomScrollAndClipCssProperty from '../pages/CustomScrollAndClipCssProperty/CustomScrollAndClipCssProperty'
 import ChrismasTree from '../pages/ChrismasTree/ChrismasTree'
 import ParticleBlobing from '../pages/ParticleBlobing/ParticleBlobing'
+import LiquidParticle from '../pages/LiquidParticle/LiquidParticle'
 
 export const router = createBrowserRouter([
   { path: '/', element: <App /> },
@@ -31,5 +32,9 @@ export const router = createBrowserRouter([
   {
     path: '/particleBlobing',
     element: <ParticleBlobing />,
+  },
+  {
+    path: '/liquidParticle',
+    element: <LiquidParticle />,
   },
 ])

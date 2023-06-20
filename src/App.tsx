@@ -14,6 +14,7 @@ function App() {
       <a href='/customScroll'>Custom Scroll & Clip Css Property</a>
       <a href='/chrismasTree'>ChrismasTree</a>
       <a href='/particleBlobing'>Particle Blobing</a>
+      <a href='/liquidParticle'>Liquid Particle</a>
     </>
   )
 }
