@@ -18,6 +18,8 @@ function App() {
       <a href='/earthMap'>Earth Map</a>
       <a href='/textDecompiled'>Text Decompiled</a>
       <a href='/asciiEffect'>Ascii Effect</a>
+      <a href='/emojiAnimation'>Emoji Animation</a>
+      <a href='/waveAndReflectEffect'>Wave & Reflect Effect</a>
     </>
   )
 }

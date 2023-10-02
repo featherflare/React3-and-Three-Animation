@@ -14,6 +14,8 @@ import LiquidParticle from '../pages/LiquidParticle/LiquidParticle'
 import EarthMap from '../pages/EarthMap/EarthMap'
 import TextDecompiled from '../pages/TextDecompiled/TextDecompiled'
 import AsciiEffect from '../pages/AsciiEffect/AsciiEffect'
+import EmojiAnimation from '../pages/EmojiAnimation/EmojiAnimation'
+import WaveAndReflectEffect from '../pages/WaveAndReflectEffect/WaveAndReflect'
 
 export const router = createBrowserRouter([
   { path: '/', element: <App /> },
@@ -51,5 +53,13 @@ export const router = createBrowserRouter([
   {
     path: '/asciiEffect',
     element: <AsciiEffect />,
+  },
+  {
+    path: '/emojiAnimation',
+    element: <EmojiAnimation />,
+  },
+  {
+    path: '/waveAndReflectEffect',
+    element: <WaveAndReflectEffect />,
   },
 ])
