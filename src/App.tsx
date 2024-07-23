@@ -20,6 +20,7 @@ function App() {
       <a href='/asciiEffect'>Ascii Effect</a>
       <a href='/emojiAnimation'>Emoji Animation</a>
       <a href='/waveAndReflectEffect'>Wave & Reflect Effect</a>
+      <a href='/loopCurveShader'>Loop Curve Shader</a>
     </>
   )
 }

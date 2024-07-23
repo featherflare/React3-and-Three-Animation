@@ -16,6 +16,7 @@ import TextDecompiled from '../pages/TextDecompiled/TextDecompiled'
 import AsciiEffect from '../pages/AsciiEffect/AsciiEffect'
 import EmojiAnimation from '../pages/EmojiAnimation/EmojiAnimation'
 import WaveAndReflectEffect from '../pages/WaveAndReflectEffect/WaveAndReflect'
+import LoopCurveShader from '../pages/LoopCurveShader/loopCurveShader'
 
 export const router = createBrowserRouter([
   { path: '/', element: <App /> },
@@ -61,5 +62,9 @@ export const router = createBrowserRouter([
   {
     path: '/waveAndReflectEffect',
     element: <WaveAndReflectEffect />,
+  },
+  {
+    path: '/loopCurveShader',
+    element: <LoopCurveShader />,
   },
 ])
