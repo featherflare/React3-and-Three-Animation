@@ -1,16 +1,14 @@
-import { MutableRefObject, useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
 import '../../assets/styles/App.css'
-import DatGui, { DatNumber } from 'react-dat-gui'
+import { Leva, useControls } from 'leva'
 export default function MandalaEffect() {
-  const cRef: MutableRefObject<any> = useRef()
+  const cRef = useRef<HTMLCanvasElement | null>(null)
 
-  const [state, setState] = useState<any>({
-    data: {
-      radius: 200,
-      period: 15,
-      amp: 4,
-      count: 20,
-    },
+  const { radius, period, amp, count } = useControls({
+    radius: { value: 200, min: 100, max: 300, step: 1 },
+    period: { value: 15, min: 0, max: 50, step: 1 },
+    amp: { value: 4, min: 0, max: 100, step: 1 },
+    count: { value: 20, min: 1, max: 50, step: 1 },
   })
 
   const draw = (
@@ -28,8 +26,7 @@ export default function MandalaEffect() {
 
     for (var i = 0; i < num; i++) {
       const teta = (i * 2 * Math.PI) / num
-      var varRadius: number =
-        radius + state.data.amp * Math.sin(teta * state.data.period + offset)
+      const varRadius = radius + amp * Math.sin(teta * period + offset)
       const x = centerX + varRadius * Math.cos(teta)
       const y = centerY + varRadius * Math.sin(teta)
 
@@ -42,17 +39,27 @@ export default function MandalaEffect() {
   }
 
   useEffect(() => {
-    const ctx: CanvasRenderingContext2D = cRef.current.getContext('2d')
+    const canvas = cRef.current
+    if (!canvas) return
+    const ctx = canvas.getContext('2d')
+    if (!ctx) return
 
-    var time = 0
+    const resizeCanvas = () => {
+      canvas.width = window.innerWidth
+      canvas.height = window.innerHeight
+    }
+
+    resizeCanvas()
+    window.addEventListener('resize', resizeCanvas)
+
+    let time = 0
     const render = () => {
       time++
-      ctx.clearRect(0, 0, innerWidth, innerHeight)
-      for (var i = 0; i < 20; i++) {
-        var color = i % 2 === 1 ? 'white' : 'black'
+      ctx.clearRect(0, 0, canvas.width, canvas.height)
+      for (let i = 0; i < count; i++) {
         draw(
           ctx,
-          state.data.radius - i * (state.data.radius / state.data.count),
+          radius - i * (radius / count),
           `hsl(${i * 5},50%,50%)`,
           (-i * time) / 100
         )
@@ -61,22 +68,13 @@ export default function MandalaEffect() {
     }
 
     render()
-  }, [draw])
 
-  const handleUpdate = (newData: any) => {
-    setState((prevState: any) => ({
-      data: { ...prevState.data, ...newData },
-    }))
-  }
+    return () => window.removeEventListener('resize', resizeCanvas)
+  }, [radius, period, amp, count])
 
   return (
     <>
-      <DatGui data={state.data} onUpdate={handleUpdate} className='gui'>
-        <DatNumber path='radius' label='Radius' min={100} max={200} step={1} />
-        <DatNumber path='period' label='period' min={0} max={50} step={1} />
-        <DatNumber path='amp' label='amp' min={0} max={100} step={1} />
-        <DatNumber path='count' label='count' min={0} max={100} step={1} />
-      </DatGui>
+      <Leva collapsed={false} oneLineLabels={true} />
       <canvas
         width={innerWidth}
         height={innerHeight}

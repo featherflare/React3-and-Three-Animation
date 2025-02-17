@@ -17,6 +17,7 @@ import AsciiEffect from '../pages/AsciiEffect/AsciiEffect'
 import EmojiAnimation from '../pages/EmojiAnimation/EmojiAnimation'
 import WaveAndReflectEffect from '../pages/WaveAndReflectEffect/WaveAndReflect'
 import LoopCurveShader from '../pages/LoopCurveShader/loopCurveShader'
+import CannonPhysic from '../pages/ThreeTest/CannonPhysic/cannonPhysic'
 
 export const router = createBrowserRouter([
   { path: '/', element: <App /> },
@@ -66,5 +67,9 @@ export const router = createBrowserRouter([
   {
     path: '/loopCurveShader',
     element: <LoopCurveShader />,
+  },
+  {
+    path: '/particle',
+    element: <CannonPhysic />,
   },
 ])
